@@ -1,0 +1,176 @@
+//llamo al archivo variables
+@import "../abstracts/variables";
+//llamo al archivo mixin
+@import "../abstracts/mixin";
+
+/* Navbar sin scroll innecesario, defini estos parametros porque me generaba scroll a los costados */
+.navbar {
+flex-shrink: 0;
+}
+
+/* modifico el background que viene con boostraps */
+.navbar {
+
+    background-color:$color-navbar ;
+}
+/* modifico la barra a mi prefencia */
+.navbar-collapse {
+    justify-content: right;
+    align-content: space-between;
+    padding-right: 20px;
+}
+/* modifico el back del menu desplegable */
+.dropdown-menu {
+    background-color: whitesmoke;
+}
+
+/* mobile */
+.menu {
+    @include grid(grid, none, 1fr);
+    background-color: $color-principal;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.textos {
+    grid-row: 2;
+    line-height: 1.5;
+   
+    width: 100%;
+    height: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 2 rem;
+}
+/* modifico los parrafos que estan dentro de la clase textos */
+.textos p {
+    font-size: 20px;
+    color: $color-tipografia;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.texto-menu {
+    font-size: 28px;
+    
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* defino el h1, que sera la palabra clave para que el motor de busqueda seleccione mi pagina al momento de buscar */
+h1 {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+/* defino la imagen que se encuetra en el index para que quede proporcionada dentro del contenedor */
+.imagen-principal {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+.principal-h1 {
+    @include flex(space-evenly);
+    grid-row: 1;
+    
+}
+footer {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}
+/* aca comenzamos con dulces en frascos */
+/* defino varios parametros que seran usado en mobile y despues los modifico para desktop */
+.body-dulces-fracos {
+    @include flex(none);
+    align-items: center ;
+}
+.menu-dulces-fracos {
+    background-color: $color-background;
+    padding: 20px;
+    padding-bottom: 50px;
+    margin: 20px;
+    @include grid(grid, auto, none);
+
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+.menu-dulces-fracos img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+.dulces-en-frascos {
+    @include flex(center);
+    align-items: center;
+
+}
+span {
+    font-size: 16px;
+    font-weight: bold;
+    color: $color-tipografia;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* pagina nueces confitadas */
+
+.main-nueces-confitadas {
+    @include flex(center);
+    align-items: center;
+    padding: 20px;
+    background-color: $color-background;
+    margin: 20px;
+}
+.main-nueces-confitadas img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    padding: 20px;
+}
+.d-flex align-items-center gap-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+/* trabajamos para dispositivos mayores a mobile */
+/* aca uso grid, ya que venia trabajando con flex, asi defino columnas y filas */
+
+@media (min-width :480px) {
+    .menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .textos {
+    grid-column: 1;
+    }
+    .principal-h1 {
+    grid-row: 2;
+    }
+    .menu-dulces-fracos {
+        @include grid(grid, none, repeat(4, 25% ));      
+    }
+    .menu-dulces-fracos img{
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        
+    }
+    .main-nueces-confitadas {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+        background-color: #E2D0C2;
+        margin: 20px;
+    }
+}
+
+
+
+

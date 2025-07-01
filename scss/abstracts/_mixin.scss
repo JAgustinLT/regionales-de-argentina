@@ -1,0 +1,19 @@
+
+//mixin con/sin parametros
+@mixin flex ($space){
+    display: flex;
+    flex-direction: column;
+    justify-content: $space;
+}
+
+//mixin sin parametros
+@mixin grid ($grid, $row, $column){
+    display: $grid;
+    grid-template-rows: $row;
+    grid-template-columns: $column;
+   
+}
+
+
+
+
