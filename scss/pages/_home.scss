@@ -249,7 +249,7 @@ span {
 
     }
     .menu-dulces-fracos {
-        @include grid(grid, none, repeat(4, 25% ));      
+        @include grid(grid, 1 fr , repeat(4, 25% ));      
     }
     .menu-dulces-fracos img{
         display: block;

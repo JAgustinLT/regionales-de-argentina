@@ -282,7 +282,7 @@ span {
   }
   .menu-dulces-fracos {
     display: grid;
-    grid-template-rows: none;
+    grid-template-rows: 1 fr;
     grid-template-columns: repeat(4, 25%);
   }
   .menu-dulces-fracos img {
